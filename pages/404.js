@@ -1,10 +1,10 @@
 import Link from "../src/components/link";
 
 
-export default function FAQPage () {
+export default function Page404 () {
     return (
         <div>
-            <h1>Alura Cases - Página de perguntas FAQ</h1>
+            <h1>OPS...você se perdeu?</h1>
             <Link href="/">Ir para a Home</Link>
         </div>
     )
