@@ -1,14 +1,15 @@
-import Link from "../src/components/link";
 import React from "react";
+import Link from "../src/components/Link";
 
-function Title ( {Children} ) {
+function Title({children, as}) {
+    const Tag = as;
     return (
         <React.Fragment>
-            <h1>
-                {Children}
-            </h1>
+            <Tag>
+                {children}
+            </Tag>
             <style jsx>{`
-                h1 {
+                ${Tag} {
                     color: red;
                 }
             `}</style>
