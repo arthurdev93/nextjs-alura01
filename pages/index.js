@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "../src/components/Link";
+import Footer from "../src/components/patterns/Footer";
 
 function Title({children, as}) {
     const Tag = as;
