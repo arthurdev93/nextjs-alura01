@@ -24,7 +24,7 @@ export default function HomePage () {
             <Link href="/faq">
                 Ir para a página do FAQ
             </Link>
-
+            <Footer />
         </div>
     )
 }
