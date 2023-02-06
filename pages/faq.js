@@ -1,23 +1,29 @@
 import { useEffect, useState } from "react";
 import Link from "../src/components/Link";
 
+export async function getStaticProps() {
+    const FAQ_API_URL = 'https://gist.githubusercontent.com/omariosouto/0ceab54bdd8182cbd1a4549d32945c1a/raw/578ad1e8e5296fa048e3e7ff6b317f7497b31ad9/alura-cases-faq.json';
+    const faq = await fetch(FAQ_API_URL)
+        .then((respostaDoServidor) => {
+            return respostaDoServidor.json();
+        })
+        .then((resposta) => {
+            return resposta;
+        });
 
+    return {
+        props: {
+            qualquercoisa: 'que eu passar aqui',
+            faq,
+        }, 
+    };
+}
 
-
-export default function FAQPage () {
-    const [faq, setFaq] = useState([]);
-    useEffect(() => {
-        const FAQ_API_URL = 'https://gist.githubusercontent.com/omariosouto/0ceab54bdd8182cbd1a4549d32945c1a/raw/578ad1e8e5296fa048e3e7ff6b317f7497b31ad9/alura-cases-faq.json';
-        fetch(FAQ_API_URL)
-            .then((respostaDoServidor) => {
-                return respostaDoServidor.json();
-            })
-            .then((resposta) => {
-                setTimeout(() => {
-                    setFaq(resposta);
-                }, 3 * 1000);
-            });
-    }, []);
+export default function FAQPage ({ faq }) {
+    console.log(faq);
+    //const [faq, setFaq] = useState([]);
+    //useEffect(() => {
+    //}, []);
 
     return (
         <div>
