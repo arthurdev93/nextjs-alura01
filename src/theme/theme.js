@@ -223,4 +223,3 @@ export const theme = {
     },
     space,
 }
-//isso tudo é o DESIGN SYSTEM
